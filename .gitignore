@@ -59,3 +59,13 @@ typings/
 
 # next.js build output
 .next
+
+# IDE's
+.vscode
+.idea
+
+# MAC
+.DS_Store
+
+# Build directories
+dist/
