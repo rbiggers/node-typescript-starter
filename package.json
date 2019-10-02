@@ -5,14 +5,18 @@
   "license": "MIT",
   "scripts": {
     "watch": "tsc -w",
-    "build": "tsc",
+    "build": "tsc -p tsconfig.build.json",
     "format": "prettier --write \"src/**/*.ts\"",
     "start": "ts-node -r tsconfig-paths/register src/main.ts",
     "start:dev": "nodemon",
     "start:debug": "nodemon --config nodemon-debug.json",
     "start:prod": "node dist/main.js",
     "serve": "nodemon --inspect --watch dist/ -d 1 ./dist/main.js",
-    "test": "jest --coverage"
+    "lint": "eslint -c .eslintrc.js src",
+    "test:unit": "jest --config ./src/_tests_/unit/jest-unit-config.js",
+    "test:int": "jest --config ./src/_tests_/integration/jest-int-config.js",
+    "test:acpt": "jest --config ./src/_tests_/acceptance/jest-acpt-config.js",
+    "test:cov": "jest --coverage"
   },
   "dependencies": {
     "rimraf": "^3.0.0"
